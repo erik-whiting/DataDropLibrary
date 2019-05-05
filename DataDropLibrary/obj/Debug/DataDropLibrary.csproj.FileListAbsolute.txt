@@ -1,0 +1,13 @@
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\bin\Debug\DataDropLibrary.dll
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\bin\Debug\DataDropLibrary.pdb
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\bin\Debug\Bytescout.Spreadsheet.dll
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\bin\Debug\EPPlus.dll
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\bin\Debug\Bytescout.Spreadsheet.xml
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\bin\Debug\EPPlus.xml
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\bin\Debug\Newtonsoft.Json.xml
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\obj\Debug\DataDropLibrary.csprojAssemblyReference.cache
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\obj\Debug\DataDropLibrary.csproj.CoreCompileInputs.cache
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\obj\Debug\DataDropLibrary.csproj.CopyComplete
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\obj\Debug\DataDropLibrary.dll
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\DataDropLibrary\obj\Debug\DataDropLibrary.pdb

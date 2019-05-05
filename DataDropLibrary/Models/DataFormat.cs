@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DataDropLibrary.Models
 {
-    public abstract class DataFormat : IDataFormat
+    public abstract class DataFormat : From, IDataFormat
     {
         public List<DataObject> DataObjects { get; set; }
         public From From { get; set; }
@@ -12,15 +12,25 @@ namespace DataDropLibrary.Models
         public abstract object GenerateWriteData();
         public abstract void WriteData(string destinationDirectory, string destinationFileName);
 
-        public DataFormat()
+        public DataFormat(string source, List<string> KeepValues, SourceDataType sourceDataType)
         {
-            DataObjects = new List<DataObject>();
-            From = new From();
+            switch (sourceDataType)
+            {
+                case SourceDataType.API:
+                    DataObjects = API(source, KeepValues);
+                    break;
+                case SourceDataType.Excel:
+                    DataObjects = Excel(source, KeepValues);
+                    break;
+                case SourceDataType.JSON:
+                    DataObjects = JSON(source, KeepValues);
+                    break;
+                case SourceDataType.XML:
+                    DataObjects = XML(source, KeepValues);
+                    break;
+            }
         }
-        public DataFormat(List<DataObject> dataObjects)
-        {
-            DataObjects = dataObjects;
-            From = new From();
-        }
+        public DataFormat() => DataObjects = new List<DataObject>();
+        public DataFormat(List<DataObject> dataObjects) => DataObjects = dataObjects;
     }
 }

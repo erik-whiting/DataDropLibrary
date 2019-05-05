@@ -1,19 +1,18 @@
-﻿using DataDropLibrary.Interfaces;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using Newtonsoft.Json.Linq;
 using System.Xml;
 using System.Xml.Linq;
-using DataDropLibrary.Utilities;
+using DataDropLibrary.Models;
 using Bytescout.Spreadsheet;
 
 namespace DataDropLibrary.Utilities
 {
-    public class From : IFrom
+    public abstract class From
     {
-        public List<Dictionary<string, string>> API(string url)
+        public static List<DataObject> API(string url, List<string> KeepValues)
         {
             List<Dictionary<string, string>> response = new List<Dictionary<string, string>>();
             var client = new WebClient();
@@ -35,10 +34,10 @@ namespace DataDropLibrary.Utilities
                     response.Add(itemDict);
                 }
             }
-            return response;
+            return Set(response, KeepValues);
         }
 
-        public List<Dictionary<string, string>> Excel(string source)
+        public static List<DataObject> Excel(string source, List<string> KeepValues)
         {
             List<Dictionary<string, string>> response = new List<Dictionary<string, string>>();
             Spreadsheet spreadsheet = new Spreadsheet();
@@ -53,10 +52,10 @@ namespace DataDropLibrary.Utilities
                 for (int x = 0; x < columns.Count; x++) itemDict.Add(columns[x], sheet.Cell(i, x).Value.ToString());
                 response.Add(itemDict);
             }
-            return response;
+            return Set(response, KeepValues);
         }
 
-        public List<Dictionary<string, string>> JSON(string source)
+        public static List<DataObject> JSON(string source, List<string> KeepValues)
         {
             var response = new List<Dictionary<string, string>>();
             var loadedJson = new LoadJson(source).JsonObjects;
@@ -66,10 +65,10 @@ namespace DataDropLibrary.Utilities
                 foreach (var item in j) itemDict.Add(item.Key, item.Value.ToString());
                 response.Add(itemDict);
             }
-            return response;
+            return Set(response, KeepValues);
         }
 
-        public List<Dictionary<string, string>> XML(string source)
+        public static List<DataObject> XML(string source, List<string> KeepValues)
         {
             var response = new List<Dictionary<string, string>>();
             XmlDocument doc = new XmlDocument();
@@ -91,7 +90,22 @@ namespace DataDropLibrary.Utilities
                 }
             }
             response.Add(itemDict);
-            return response;
+            return Set(response, KeepValues);
         }
+
+        public static List<DataObject> Set(List<Dictionary<string, string>> AllValues, List<string> KeepValues)
+        {
+            var DataObjects = new List<DataObject>();
+            foreach (var value in AllValues)
+            {
+                var dataObject = new DataObject();
+                var dict = new Dictionary<string, string>();
+                foreach (var attribute in KeepValues) dict.Add(attribute, value[attribute]);
+                dataObject.DataPairs.Add(dict);
+                DataObjects.Add(dataObject);
+            }
+            return DataObjects;
+        }
+
     }
 }
