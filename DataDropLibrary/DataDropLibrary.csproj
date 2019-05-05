@@ -63,6 +63,7 @@
     <Compile Include="Models\JsonDataFormat.cs" />
     <Compile Include="Models\RawSource.cs" />
     <Compile Include="Models\SqlDataFormat.cs" />
+    <Compile Include="Models\XmlDataFormat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Database\DatabaseConnect.cs" />
     <Compile Include="Utilities\Database\DB.cs" />

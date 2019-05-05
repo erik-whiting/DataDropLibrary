@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DataDropLibrary.Utilities;
+
+namespace DataDropLibrary.Models
+{
+    class XmlDataFormat : DataFormat
+    {
+        public override object GenerateWriteData()
+        {
+            string xmlString = "<?xml version='1.0' encoding='UTF-8'?>";
+            xmlString += "<root>";
+            foreach (var dataObject in DataObjects)
+            {
+                xmlString += "<object>";
+                foreach (var attr in Helpers.GetAttributes(DataObjects))
+                {
+                    foreach (var pair in dataObject.DataPairs)
+                    {
+                        xmlString += "<" + attr + ">";
+                        xmlString += pair[attr];
+                        xmlString += "</" + attr + ">";
+                    }
+                }
+                xmlString += "</object>";
+            }
+            xmlString += "</root>";
+            return xmlString.Replace("'", "\"");
+        }
+
+        public override void WriteData(string destinationDirectory, string destinationFileName)
+        {
+            using (StreamWriter file = new StreamWriter(destinationDirectory + destinationFileName))
+            {
+                file.WriteLine(GenerateWriteData());
+            }
+        }
+
+        public XmlDataFormat() : base() { }
+    }
+}
