@@ -32,17 +32,15 @@ namespace DataDropLibrary.Utilities.Database
             }
         }
 
+        public DB() { }
+
         public void CloseConnection()
         {
             Connection.Close();
             Status = "Disconnected";
         }
 
-        public SqlDataReader Query(string SQL)
-        {
-            Command = new SqlCommand(SQL, Connection);
-            return Command.ExecuteReader();
-        }
+        public SqlDataReader Query(string SQL) => new SqlCommand(SQL, Connection).ExecuteReader();
 
     }
 }

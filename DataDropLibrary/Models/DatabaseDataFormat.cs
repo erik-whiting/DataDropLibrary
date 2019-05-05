@@ -1,21 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DataDropLibrary.Utilities.Database;
+using DataDropLibrary.Utilities;
 
 namespace DataDropLibrary.Models
 {
     public class DatabaseDataFormat : DataFormat
     {
+        public DB DB { get; set; }
+        public string Table { get; set; }
+
         public override object GenerateWriteData()
         {
-            throw new NotImplementedException();
+            return Helpers.GenerateSqlInsert(DataObjects, Table);
         }
 
         public override void WriteData(string destinationDirectory, string destinationFileName)
         {
-            throw new NotImplementedException();
+            string insertStatement = (string)GenerateWriteData();
+            DB.Query(insertStatement.Replace("\"", "'").Replace("\\r\\n", " "));
+            DB.CloseConnection();
+        }
+
+        public DatabaseDataFormat(
+            string source, string catalog, string username,
+            string password, string dbSystem, string port = ""
+            ) : base()
+        {
+            DB = new DB(source, catalog, username, password, dbSystem, port);
         }
     }
 }

@@ -63,7 +63,7 @@ namespace DataDropLibrary.Utilities
                     connString = ConnStringValues(PostgreConnectString());
                     break;
                 case DBMS.MySQL:
-                    connString = ConnStringValues(MySQLConnectString());
+                    connString = ConnStringValues(MySQLConnectString);
                     break;
                 default:
                     connString = ConnStringValues(SQLServerConnectString());
@@ -73,32 +73,16 @@ namespace DataDropLibrary.Utilities
             return connString;
         }
 
-        public string ConnStringValues(string baseString)
-        {
-            string connString = baseString.Replace("GETSOURCE", Source);
-            connString = connString.Replace("GETDB", Catalog);
-            connString = connString.Replace("GETUSER", UserName);
-            connString = connString.Replace("GETPASSWORD", Password);
-            connString = connString.Replace("GETPORT", Port);
+        public string ConnStringValues(string baseString) => baseString
+                .Replace("GETSOURCE", Source)
+                .Replace("GETDB", Catalog)
+                .Replace("GETUSER", UserName)
+                .Replace("GETPASSWORD", Password)
+                .Replace("GETPORT", Port);
 
-            return connString;
-        }
-        
-        public string SQLServerConnectString()
-        {
-            return "Data Source=GETSOURCE;Initial Catalog=GETDB;User ID=GETUSER;Password=GETPASSWORD";
-        }
-        public string OracleConnectString()
-        {
-            return "Data Source=GETSOURCE;User Id=GETUSER;Password=GETPASSWORD";
-        }
-        public string PostgreConnectString()
-        {
-            return "User ID=GETUSER;Password=GETPASSWORD;Host=GETHOST;Port=GETPORT;Database=GETDB";
-        }
-        public string MySQLConnectString()
-        {
-            return "Server=GETSOURCE;Database=GETDB;Uid=GETUSER;Pwd=GETPASSWORD;";
-        }
+        public string SQLServerConnectString() => "Data Source=GETSOURCE;Initial Catalog=GETDB;User ID=GETUSER;Password=GETPASSWORD";
+        public string OracleConnectString() => "Data Source=GETSOURCE;User Id=GETUSER;Password=GETPASSWORD";
+        public string PostgreConnectString() => "User ID=GETUSER;Password=GETPASSWORD;Host=GETHOST;Port=GETPORT;Database=GETDB";
+        public string MySQLConnectString => "Server=GETSOURCE;Database=GETDB;Uid=GETUSER;Pwd=GETPASSWORD;";
     }
 }
