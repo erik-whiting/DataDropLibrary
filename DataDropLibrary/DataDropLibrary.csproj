@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bytescout.Spreadsheet, Version=3.3.1.1762, Culture=neutral, PublicKeyToken=f7dd1bd9d40a50eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bytescout.Spreadsheet.3.3.1.1762\lib\net40\Bytescout.Spreadsheet.dll</HintPath>
+    </Reference>
     <Reference Include="EPPlus, Version=4.5.3.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.4.5.3.1\lib\net40\EPPlus.dll</HintPath>
     </Reference>
@@ -54,7 +57,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Interfaces\IDataFormat.cs" />
     <Compile Include="Interfaces\ISource.cs" />
-    <Compile Include="Interfaces\ITo.cs" />
+    <Compile Include="Interfaces\IFrom.cs" />
     <Compile Include="Models\ApiDataFormat.cs" />
     <Compile Include="Models\DatabaseDataFormat.cs" />
     <Compile Include="Models\DataFormat.cs" />
@@ -68,8 +71,8 @@
     <Compile Include="Utilities\Database\DatabaseConnect.cs" />
     <Compile Include="Utilities\Database\DB.cs" />
     <Compile Include="Utilities\Database\DBMS.cs" />
+    <Compile Include="Utilities\From.cs" />
     <Compile Include="Utilities\Helpers.cs" />
-    <Compile Include="Utilities\To.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

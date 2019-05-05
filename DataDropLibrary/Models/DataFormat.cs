@@ -7,7 +7,7 @@ namespace DataDropLibrary.Models
     public abstract class DataFormat : IDataFormat
     {
         public List<DataObject> DataObjects { get; set; }
-        public To To { get; set; }
+        public From From { get; set; }
 
         public abstract object GenerateWriteData();
         public abstract void WriteData(string destinationDirectory, string destinationFileName);
@@ -15,12 +15,12 @@ namespace DataDropLibrary.Models
         public DataFormat()
         {
             DataObjects = new List<DataObject>();
-            To = new To();
+            From = new From();
         }
         public DataFormat(List<DataObject> dataObjects)
         {
             DataObjects = dataObjects;
-            To = new To();
+            From = new From();
         }
     }
 }
