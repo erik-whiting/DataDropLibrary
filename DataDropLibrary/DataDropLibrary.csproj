@@ -54,7 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Interfaces\IDataFormat.cs" />
     <Compile Include="Interfaces\ISource.cs" />
     <Compile Include="Models\ApiDataFormat.cs" />

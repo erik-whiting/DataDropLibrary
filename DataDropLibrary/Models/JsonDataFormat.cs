@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using DataDropLibrary.Utilities;
 using Newtonsoft.Json;
 
 namespace DataDropLibrary.Models
 {
-    class JsonDataFormat : DataFormat
+    public class JsonDataFormat : DataFormat
     {
         public override object GenerateWriteData()
         {
@@ -21,5 +22,9 @@ namespace DataDropLibrary.Models
             string fullFilePath = Path.Combine(destinationDirectory, destinationFileName);
             using (StreamWriter file = new StreamWriter(fullFilePath)) file.WriteLine(GenerateWriteData());
         }
+        public JsonDataFormat() : base() { }
+        public JsonDataFormat(List<DataObject> dataObjects) : base(dataObjects) { }
+        public JsonDataFormat(string source, List<string> KeepValues, SourceDataType sourceDataType) : 
+            base(source, KeepValues, sourceDataType) { }
     }
 }

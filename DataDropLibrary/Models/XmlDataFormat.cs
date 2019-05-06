@@ -41,5 +41,9 @@ namespace DataDropLibrary.Models
         }
 
         public XmlDataFormat() : base() { }
+        public XmlDataFormat(string source, List<string> KeepValues, SourceDataType sourceDataType) :
+            base(source, KeepValues, sourceDataType)
+        { }
+        public XmlDataFormat(List<DataObject> dataObjects) : base(dataObjects) { }
     }
 }

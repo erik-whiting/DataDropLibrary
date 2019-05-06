@@ -5,7 +5,7 @@ using DataDropLibrary.Utilities;
 
 namespace DataDropLibrary.Models
 {
-    class ExcelDataFormat : DataFormat
+    public class ExcelDataFormat : DataFormat
     {
         public override object GenerateWriteData()
         {
@@ -70,5 +70,8 @@ namespace DataDropLibrary.Models
             }
         }
         public ExcelDataFormat() : base() { }
+        public ExcelDataFormat(string source, List<string> KeepValues, SourceDataType sourceDataType) :
+            base(source, KeepValues, sourceDataType) { }
+        public ExcelDataFormat(List<DataObject> dataObjects) : base(dataObjects) { }
     }
 }
