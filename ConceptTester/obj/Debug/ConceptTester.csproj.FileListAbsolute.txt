@@ -1,0 +1,16 @@
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\bin\Debug\ConceptTester.exe.config
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\bin\Debug\ConceptTester.exe
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\bin\Debug\ConceptTester.pdb
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\bin\Debug\DataDropLibrary.dll
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\bin\Debug\Newtonsoft.Json.dll
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\bin\Debug\Bytescout.Spreadsheet.dll
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\bin\Debug\EPPlus.dll
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\bin\Debug\DataDropLibrary.pdb
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\bin\Debug\Newtonsoft.Json.xml
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\bin\Debug\Bytescout.Spreadsheet.xml
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\bin\Debug\EPPlus.xml
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\obj\Debug\ConceptTester.csprojAssemblyReference.cache
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\obj\Debug\ConceptTester.csproj.CoreCompileInputs.cache
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\obj\Debug\ConceptTester.csproj.CopyComplete
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\obj\Debug\ConceptTester.exe
+C:\Users\eedee\Documents\mastersStuff\Spring19\SW Engr 2\DataDropLibrary\ConceptTester\obj\Debug\ConceptTester.pdb

@@ -19,7 +19,7 @@ namespace DataDropLibrary.Models
 
         public override void WriteData(string destinationDirectory, string destinationFileName)
         {
-            string fullFilePath = Path.Combine(destinationDirectory, destinationFileName);
+            string fullFilePath = Path.Combine(destinationDirectory, destinationFileName + ".json");
             using (StreamWriter file = new StreamWriter(fullFilePath)) file.WriteLine(GenerateWriteData());
         }
         public JsonDataFormat() : base() { }

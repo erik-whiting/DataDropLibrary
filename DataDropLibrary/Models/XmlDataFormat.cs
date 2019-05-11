@@ -8,7 +8,7 @@ using DataDropLibrary.Utilities;
 
 namespace DataDropLibrary.Models
 {
-    class XmlDataFormat : DataFormat
+    public class XmlDataFormat : DataFormat
     {
         public override object GenerateWriteData()
         {
@@ -34,7 +34,7 @@ namespace DataDropLibrary.Models
 
         public override void WriteData(string destinationDirectory, string destinationFileName)
         {
-            using (StreamWriter file = new StreamWriter(destinationDirectory + destinationFileName))
+            using (StreamWriter file = new StreamWriter(destinationDirectory + "\\" + destinationFileName + ".xml"))
             {
                 file.WriteLine(GenerateWriteData());
             }

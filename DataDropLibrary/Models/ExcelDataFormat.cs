@@ -40,7 +40,7 @@ namespace DataDropLibrary.Models
 
         public override void WriteData(string destinationDirectory, string destinationFileName)
         {
-            string filePath = destinationDirectory + "\\" + destinationFileName;
+            string filePath = destinationDirectory + "\\" + destinationFileName + ".xlsx";
             using (ExcelPackage excel = new ExcelPackage())
             {
                 excel.Workbook.Worksheets.Add("DataDrop Worksheet");

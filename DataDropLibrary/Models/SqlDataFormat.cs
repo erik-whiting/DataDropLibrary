@@ -16,7 +16,7 @@ namespace DataDropLibrary.Models
         public override void WriteData(string destinationDirectory, string destinationFileName)
         {
             TableName = destinationFileName.Split('.').First();
-            string filePath = destinationDirectory + "\\" + DateTime.Now.ToString("MM-dd-yyyy") + destinationFileName;
+            string filePath = destinationDirectory + "\\" + DateTime.Now.ToString("MM-dd-yyyy") + destinationFileName + ".sql";
             using (System.IO.StreamWriter file =
                 new System.IO.StreamWriter(filePath))
             {
