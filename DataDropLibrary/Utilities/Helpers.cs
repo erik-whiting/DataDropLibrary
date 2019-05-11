@@ -9,6 +9,7 @@ namespace DataDropLibrary.Utilities
 {
     class Helpers
     {
+
         public static List<string> GetAttributes(List<DataObject> dataObjects)
         {
             var attributes = new List<string>();
