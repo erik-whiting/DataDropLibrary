@@ -101,7 +101,7 @@ namespace DataDropLibrary.Utilities
                 var dataObject = new DataObject();
                 var dict = new Dictionary<string, string>();
                 foreach (var attribute in KeepValues) dict.Add(attribute, value[attribute]);
-                dataObject.DataPairs.Add(dict);
+                dataObject.TryGetPairs(dict);
                 DataObjects.Add(dataObject);
             }
             return DataObjects;

@@ -17,7 +17,7 @@ namespace DataDropLibrary.Models
 
         public override void WriteData(string destinationDirectory, string destinationFileName)
         {
-            this.Table = destinationFileName;
+            Table = destinationFileName;
             string insertStatement = (string)GenerateWriteData();
             insertStatement = insertStatement.Replace("\"", "'").Replace("\\r\\n", " ");
             DB.Query(insertStatement);
