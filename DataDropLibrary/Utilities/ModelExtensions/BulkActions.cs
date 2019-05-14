@@ -62,5 +62,30 @@ namespace DataDropLibrary.Utilities.ModelExtensions
             }
         }
 
+        public static DataFormat FromMultipleSources(List<MultiDataFormat<DataFormat>> dataFormats, string TargetDataFormat)
+        {
+            List<DataObject> dataObjects = new List<DataObject>();
+            foreach (var d in dataFormats)
+            {
+                var vals = d.ValsToList().ToList();
+                string source = d.Source.ToString();
+                dataObjects.Concat(Helpers.FromRouter(d.Source.ToString(), vals, d.dataType));
+            }
+            
+            switch (TargetDataFormat.ToLower())
+            {
+                case "json":
+                    return new JsonDataFormat(dataObjects);
+                case "excel":
+                    return new ExcelDataFormat(dataObjects);
+                case "xml":
+                    return new XmlDataFormat(dataObjects);
+                default:
+                    return new JsonDataFormat(dataObjects); 
+            }
+
+        }
+
+
     }
 }

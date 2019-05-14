@@ -67,6 +67,7 @@
     <Compile Include="Models\XmlDataFormat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ModelExtensions\BulkActions.cs" />
+    <Compile Include="Utilities\ModelExtensions\MultiDataFormat.cs" />
     <Compile Include="Utilities\Option.cs" />
     <Compile Include="Utilities\Database\DatabaseConnect.cs" />
     <Compile Include="Utilities\Database\DB.cs" />

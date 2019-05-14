@@ -1,6 +1,7 @@
 ﻿using DataDropLibrary.Models;
 using DataDropLibrary.Utilities;
 using DataDropLibrary.Utilities.ModelExtensions;
+using System;
 using System.Collections.Generic;
 
 namespace ConceptTester
@@ -34,32 +35,44 @@ namespace ConceptTester
             DataFormat xmlDF = new XmlDataFormat(apiSource, apiAttrs, SourceDataType.API);
             xmlDF.WriteData(initialDirectory, "xmlTest");
 
+            // Bulk data actions demo
             List<DataFormat> dataFormats = new List<DataFormat>();
             dataFormats.Add(xmlDF);
             dataFormats.Add(jsonDF);
             dataFormats.Add(excelDF);
             BulkActions.WriteDataFormatsToFile(dataFormats, initialDirectory, "bulktest");
 
+            // Generics Demo
+            MultiDataFormat<DataFormat> jsonGeneric = new MultiDataFormat<DataFormat>(jsonSource, attrs, SourceDataType.JSON);
+            MultiDataFormat<DataFormat> excelGeneric = new MultiDataFormat<DataFormat>(excelSource, attrs, SourceDataType.Excel);
+            List<DataFormat> dfs = new List<DataFormat>();
+
+            List<MultiDataFormat<DataFormat>> genericDFs = new List<MultiDataFormat<DataFormat>>();
+            genericDFs.Add(jsonGeneric);
+            genericDFs.Add(excelGeneric);
+            DataFormat excelFromGeneric = BulkActions.FromMultipleSources(genericDFs, "excel");
+            excelFromGeneric.WriteData(initialDirectory, "GenericExcel");
+
             // Database demo
-            //List<string> dbAttrs = new List<string>();
-            //dbAttrs.Add("fname");
-            //dbAttrs.Add("lname");
-            //dbAttrs.Add("age");
-            //string server = Environment.MachineName;
-            //string db  = "LearningTest";
-            //string user = "erik_example";
-            //string password = "abc123";
-            //DatabaseDataFormat dbDF = new DatabaseDataFormat(
-            //    server: server,
-            //    catalog: db,
-            //    username: user,
-            //    password: password,
-            //    dbSystem: "sqlserver",
-            //    source: initialDirectory + "\\" + jsonForDB,
-            //    KeepValues: dbAttrs,
-            //    sourceDataType: SourceDataType.JSON
-            //    );
-            //dbDF.WriteData("", "People");
+            List<string> dbAttrs = new List<string>();
+            dbAttrs.Add("fname");
+            dbAttrs.Add("lname");
+            dbAttrs.Add("age");
+            string server = Environment.MachineName;
+            string db  = "LearningTest";
+            string user = "erik_example";
+            string password = "abc123";
+            DatabaseDataFormat dbDF = new DatabaseDataFormat(
+                server: server,
+                catalog: db,
+                username: user,
+                password: password,
+                dbSystem: "sqlserver",
+                source: initialDirectory + "\\" + jsonForDB,
+                KeepValues: dbAttrs,
+                sourceDataType: SourceDataType.JSON
+                );
+            dbDF.WriteData("", "People");
         }
     }
 }

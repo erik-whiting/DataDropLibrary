@@ -69,5 +69,22 @@ namespace DataDropLibrary.Utilities
             return InsertStatement;
         }
 
+        public static List<DataObject> FromRouter(string source, List<string> keepValues, SourceDataType sourceDataType)
+        {
+            switch (sourceDataType)
+            {
+                case SourceDataType.API:
+                    return From.API(source, keepValues);
+                case SourceDataType.Excel:
+                    return From.Excel(source, keepValues);
+                case SourceDataType.JSON:
+                    return From.JSON(source, keepValues);
+                case SourceDataType.XML:
+                    return From.XML(source, keepValues);
+                default:
+                    return From.JSON(source, keepValues);
+            }
+        }
+
     }
 }
