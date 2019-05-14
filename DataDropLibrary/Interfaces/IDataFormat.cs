@@ -8,7 +8,6 @@ namespace DataDropLibrary.Interfaces
 {
     interface IDataFormat
     {
-        object GenerateWriteData();
         void WriteData(string destinationDirectory, string desintationFileName);
     }
 }
