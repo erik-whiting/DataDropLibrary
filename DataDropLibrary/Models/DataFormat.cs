@@ -31,6 +31,7 @@ namespace DataDropLibrary.Models
             }
         }
         public DataFormat() => DataObjects = new List<DataObject>();
+
         public DataFormat(List<DataObject> dataObjects) => DataObjects = dataObjects;
     }
 }
